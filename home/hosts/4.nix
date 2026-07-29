@@ -38,6 +38,7 @@
     my.lang.rust.enable = true;
     my.lang.nix.enable = true;
     my.lang.latex.enable = true;
+    my.lang.haskell.enable = true;
     my.tools.claude.enable = true;
     my.tools.codex.enable = true;
     my.tools.antigravity.enable = true;
@@ -46,13 +47,11 @@
     my.tools.neovim.options.socket.enable = true;
     my.tools.scrapling.enable = true;
     my.tools.playwright.enable = true;
-    home.packages =
-      with pkgs;
-      [
-        git-crypt
-        poppler-utils
-        wrangler
-      ];
+    home.packages = with pkgs; [
+      git-crypt
+      poppler-utils
+      wrangler
+    ];
     programs.gpg.enable = true;
     services.gpg-agent = {
       enable = true;

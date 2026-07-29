@@ -18,6 +18,7 @@ let
         "nix"
         "ruby"
         "lean"
+        "haskell"
       ]
       (_: {
         enable = false;
@@ -123,6 +124,7 @@ let
     ++ lib.optionals enabledLang.python.enable [ python ]
     ++ lib.optionals enabledLang.ruby.enable [ ruby ]
     ++ lib.optionals enabledLang.rust.enable [ rust ]
+    ++ lib.optionals enabledLang.haskell.enable [ haskell ]
     ++ lib.optionals enabledLang.latex.enable [
       latex
       bibtex
@@ -240,6 +242,15 @@ in
     ++ lib.optionals enabledLang.latex.enable [
       texlivePackages.latexindent
       texlab
+    ]
+    ++ lib.optionals enabledLang.haskell.enable [
+      haskell-language-server
+      fourmolu
+      hlint
+      haskellPackages.hoogle
+      haskellPackages.fast-tags
+      haskellPackages.haskell-debug-adapter
+      haskellPackages.implicit-hie
     ];
 
   extraPlugins =
@@ -303,6 +314,9 @@ in
       neotest
       FixCursorHold-nvim
       pkgs.vimPlugins.rustaceanvim
+    ]
+    ++ lib.optionals enabledLang.haskell.enable [
+      haskell-tools-nvim
     ];
 
   extraConfigLua =
@@ -311,11 +325,13 @@ in
         "@TYPOS_CONFIG@"
         "@CLIPBOARD_PROVIDER@"
         "@PYTHON_DAP_PYTHON@"
+        "@CONFIG_LUA_DIR@"
       ]
       [
         "${./typos.toml}"
         clipboardProvider
         "${pythonDebugpy}/bin/python"
+        "${./lua}"
       ]
       (
         builtins.replaceStrings
@@ -328,6 +344,7 @@ in
             "@LANG_NIX_ENABLED@"
             "@LANG_RUBY_ENABLED@"
             "@LANG_LEAN_ENABLED@"
+            "@LANG_HASKELL_ENABLED@"
           ]
           [
             (luaBool enabledLang.go.enable)
@@ -338,6 +355,7 @@ in
             (luaBool enabledLang.nix.enable)
             (luaBool enabledLang.ruby.enable)
             (luaBool enabledLang.lean.enable)
+            (luaBool enabledLang.haskell.enable)
           ]
           (builtins.readFile ./config.lua)
       );
