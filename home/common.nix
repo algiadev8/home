@@ -94,8 +94,8 @@ in
     enable = true;
     settings = {
       user = {
-        name = "daichi-629";
-        email = "57441686+daichi-629@users.noreply.github.com";
+        name = "algiadev8";
+        email = "57441686+algiadev8@users.noreply.github.com";
       };
       init = {
         defaultBranch = "main";

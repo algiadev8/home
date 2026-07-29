@@ -12,6 +12,9 @@
       autoUpdate = true;
       upgrade = true;
     };
+    brews = [
+      "gmp"
+    ];
     casks = [
       "brave-browser"
       "slack"
