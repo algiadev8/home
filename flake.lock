@@ -42,11 +42,11 @@
     "brew-api": {
       "flake": false,
       "locked": {
-        "lastModified": 1785888056,
-        "narHash": "sha256-XbhNTY0d2HSq3M+69LK3MSiTXmsYhBx0uJuO29MpH8Y=",
+        "lastModified": 1785981778,
+        "narHash": "sha256-MLCaMqMte8GU6TeXJkG1yYZW//rM6CYlA33H0X4Z27E=",
         "owner": "BatteredBunny",
         "repo": "brew-api",
-        "rev": "9d1275c9589fc425ae4a035ac1bdd4d20094ac31",
+        "rev": "4d6426bf5338de8b3f831dc8ebcb456634796587",
         "type": "github"
       },
       "original": {
@@ -98,11 +98,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1785878663,
-        "narHash": "sha256-aFxufwNsDB34KXhuz7/H9yvQ1IxhXso9lhvskGkYWLM=",
+        "lastModified": 1785971993,
+        "narHash": "sha256-LlnQ3eKTaR9hbPb875JE6sH45DCAcipZRWqpS6C45Zk=",
         "owner": "ryoppippi",
         "repo": "nix-claude-code",
-        "rev": "b9e72f05ca05fcc0c3d92b53667ec4070703dbc1",
+        "rev": "812585781fdc1bff22a4baa1a04c3988d5e60857",
         "type": "github"
       },
       "original": {
@@ -510,11 +510,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785820796,
-        "narHash": "sha256-sZXy8mzUMi2cOGulhoW4HWAZB6JhXOAx1x8J4auZFWk=",
+        "lastModified": 1785907205,
+        "narHash": "sha256-Ds1vTi53af4wDMAveSR/K0JnywDslLwmgwhVIiwnNmY=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "b6916ba032e02122d6ed3064f40cabe937363d43",
+        "rev": "c5cb13481d718fac906aa9cfd85f9b60e1a546cb",
         "type": "github"
       },
       "original": {
