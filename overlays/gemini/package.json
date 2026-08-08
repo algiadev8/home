@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@google/gemini-cli": "0.54.0"
+    "@google/gemini-cli": "0.54.4"
   }
 }
