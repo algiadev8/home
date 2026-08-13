@@ -210,7 +210,7 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "browser-use", specifier = "==0.13.7" }]
+requires-dist = [{ name = "browser-use", specifier = ">=0.13.7,<1.0" }]
 
 [[package]]
 name = "browser-use-sdk"

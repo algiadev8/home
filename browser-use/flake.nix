@@ -75,6 +75,40 @@
         }
       );
 
+      apps = forAllSystems (
+        system:
+        let
+          pkgs = import nixpkgs { inherit system; };
+          update = pkgs.writeShellApplication {
+            name = "update-browser-use";
+            runtimeInputs = [ pkgs.uv ];
+            text = ''
+              set -euo pipefail
+
+              workspace_root="''${BROWSER_USE_ROOT:-$PWD}"
+              if [ ! -f "$workspace_root/pyproject.toml" ] && [ -f "$workspace_root/browser-use/pyproject.toml" ]; then
+                workspace_root="$workspace_root/browser-use"
+              fi
+
+              if [ ! -f "$workspace_root/pyproject.toml" ]; then
+                echo "Could not find browser-use/pyproject.toml." >&2
+                echo "Run this command from the repository root or browser-use/." >&2
+                exit 1
+              fi
+
+              cd "$workspace_root"
+              uv lock --upgrade-package browser-use
+            '';
+          };
+        in
+        {
+          update = {
+            type = "app";
+            program = "${update}/bin/update-browser-use";
+          };
+        }
+      );
+
       overlays.default = final: _prev: {
         browser-use = self.packages.${final.stdenv.hostPlatform.system}.browser-use;
       };

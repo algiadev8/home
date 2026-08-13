@@ -42,7 +42,7 @@ jobs:
             brew-nix \
             brew-api
 
-      - name: Update npm overlays
+      - name: Update overlays
         run: |
           nix run .#update-npm-overlays
           nix run ./overlays/antigravity#update
@@ -50,13 +50,16 @@ jobs:
           nix flake update --flake ./overlays/gemini
           nix flake update --flake ./overlays/antigravity
           nix flake update --flake ./overlays/playwright
+          nix run ./browser-use#update
+          nix flake update --flake ./browser-use
           nix flake update \
             codex-overlay \
             gemini-overlay \
             antigravity-overlay \
-            playwright-overlay
+            playwright-overlay \
+            browser-use-overlay
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 'chore: daily update of flake.lock and npm overlays'
+          commit_message: 'chore: daily update of flake.lock and overlays'
