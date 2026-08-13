@@ -51,6 +51,7 @@
     my.tools.neovim.options.socket.enable = true;
     my.tools.scrapling.enable = true;
     my.tools.playwright.enable = true;
+    my.tools.officecli.enable = true;
     home.packages = with pkgs; [
       git-crypt
       poppler-utils

@@ -38,6 +38,7 @@ in
     ./tools/playwright.nix
     ./tools/scrapling.nix
     ./tools/copilot-cli.nix
+    ./tools/officecli.nix
   ];
 
   home.stateVersion = "26.05";

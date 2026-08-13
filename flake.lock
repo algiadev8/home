@@ -464,6 +464,22 @@
       },
       "parent": []
     },
+    "officecli-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "path": "./overlays/officecli",
+        "type": "path"
+      },
+      "original": {
+        "path": "./overlays/officecli",
+        "type": "path"
+      },
+      "parent": []
+    },
     "playwright-overlay": {
       "inputs": {
         "nixpkgs": [
@@ -565,6 +581,7 @@
         "nixpkgs": "nixpkgs_3",
         "nixpkgs_unstable": "nixpkgs_unstable",
         "nvim-config": "nvim-config",
+        "officecli-overlay": "officecli-overlay",
         "playwright-overlay": "playwright-overlay",
         "ppt-master": "ppt-master",
         "rust-overlay": "rust-overlay",

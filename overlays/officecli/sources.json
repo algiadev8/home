@@ -1,0 +1,22 @@
+{
+  "aarch64-darwin": {
+    "hash": "sha256-LxWNRvm2xesN/k6wIDgRQAHhesxHtnNHQXxW3PllkJY=",
+    "url": "https://github.com/iOfficeAI/OfficeCLI/releases/download/v1.0.143/officecli-mac-arm64",
+    "version": "1.0.143"
+  },
+  "aarch64-linux": {
+    "hash": "sha256-xQKY5GmPzRsV/hoPCWQFrSYLXITURAiCWC0Luh5XvUk=",
+    "url": "https://github.com/iOfficeAI/OfficeCLI/releases/download/v1.0.143/officecli-linux-arm64",
+    "version": "1.0.143"
+  },
+  "x86_64-darwin": {
+    "hash": "sha256-aT0kPbYWx0cF/snZL9/Io9s2rPzqN47bcmTCow0znZw=",
+    "url": "https://github.com/iOfficeAI/OfficeCLI/releases/download/v1.0.143/officecli-mac-x64",
+    "version": "1.0.143"
+  },
+  "x86_64-linux": {
+    "hash": "sha256-ainFmKeJtXySwD5WCQfT8TGkvQoGh4Wx0ziob8MaWKc=",
+    "url": "https://github.com/iOfficeAI/OfficeCLI/releases/download/v1.0.143/officecli-linux-x64",
+    "version": "1.0.143"
+  }
+}

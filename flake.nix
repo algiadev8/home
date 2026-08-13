@@ -69,6 +69,10 @@
       url = "path:./browser-use";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    officecli-overlay = {
+      url = "path:./overlays/officecli";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     herdr = {
       url = "github:ogulcancelik/herdr";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -99,6 +103,7 @@
       wrangler-overlay,
       text-embeddings-router-overlay,
       browser-use-overlay,
+      officecli-overlay,
       brew-nix,
       home-manager,
       nix-darwin,
@@ -125,6 +130,7 @@
         wrangler-overlay.overlays.default
         text-embeddings-router-overlay.overlays.default
         browser-use-overlay.overlays.default
+        officecli-overlay.overlays.default
         claude-overlay.overlays.default
         brew-nix.overlays.default
       ];
@@ -263,6 +269,11 @@
                 config.allowUnfree = true;
                 hostPlatform = system;
               };
+
+              nix.settings.experimental-features = [
+                "nix-command"
+                "flakes"
+              ];
 
               system.stateVersion = 6;
               system.primaryUser = username;
