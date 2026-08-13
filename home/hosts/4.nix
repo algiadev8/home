@@ -42,6 +42,7 @@
     my.lang.nix.enable = true;
     my.lang.latex.enable = true;
     my.lang.haskell.enable = true;
+    my.lang.python.enable = true;
     my.tools.claude.enable = true;
     my.tools.codex.enable = true;
     my.tools.antigravity.enable = true;
@@ -54,6 +55,7 @@
       git-crypt
       poppler-utils
       wrangler
+      browser-use
     ];
     programs.gpg.enable = true;
     services.gpg-agent = {

@@ -133,6 +133,14 @@ in
       "cd"
     ];
   };
+  programs.nh = {
+    enable = true;
+    clean = {
+      enable = true;
+      dates = "weekly";
+      extraArgs = "--keep-since 30d --keep-one";
+    };
+  };
 
   xdg.enable = true;
   xdg.configFile."zellij/config.kdl".source = ../config/zellij/config.kdl;

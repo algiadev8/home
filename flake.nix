@@ -65,6 +65,10 @@
       url = "path:./overlays/text-embeddings-router";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    browser-use-overlay = {
+      url = "path:./browser-use";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     herdr = {
       url = "github:ogulcancelik/herdr";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -94,6 +98,7 @@
       playwright-overlay,
       wrangler-overlay,
       text-embeddings-router-overlay,
+      browser-use-overlay,
       brew-nix,
       home-manager,
       nix-darwin,
@@ -119,6 +124,7 @@
         playwright-overlay.overlays.default
         wrangler-overlay.overlays.default
         text-embeddings-router-overlay.overlays.default
+        browser-use-overlay.overlays.default
         claude-overlay.overlays.default
         brew-nix.overlays.default
       ];
