@@ -149,6 +149,13 @@ if lang.latex then
     require("nabla").toggle_virt({ autogen = true, silent = true })
   end, { desc = "Toggle Nabla math preview" })
 end
+if lang.terraform then
+  vim.lsp.config("terraformls", {
+    cmd = { "terraform-ls", "serve" },
+    filetypes = { "terraform", "terraform-vars" },
+    root_markers = { ".terraform", ".git" },
+  })
+end
 if lang.go then
   vim.lsp.config("gopls", {
     root_markers = { "go.work", "go.mod", ".git" },
@@ -302,6 +309,9 @@ if lang.nix then
 end
 if lang.latex then
   table.insert(lsp_servers, "texlab")
+end
+if lang.terraform then
+  table.insert(lsp_servers, "terraformls")
 end
 for _, server in ipairs(lsp_servers) do
   pcall(vim.lsp.enable, server)

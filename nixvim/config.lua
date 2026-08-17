@@ -4,6 +4,7 @@ local lang = {
   python = @LANG_PYTHON_ENABLED@,
   rust = @LANG_RUST_ENABLED@,
   latex = @LANG_LATEX_ENABLED@,
+  terraform = @LANG_TERRAFORM_ENABLED@,
   nix = @LANG_NIX_ENABLED@,
   ruby = @LANG_RUBY_ENABLED@,
   lean = @LANG_LEAN_ENABLED@,

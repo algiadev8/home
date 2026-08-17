@@ -15,6 +15,7 @@ let
         "python"
         "rust"
         "latex"
+        "terraform"
         "nix"
         "ruby"
         "lean"
@@ -124,6 +125,7 @@ let
     ++ lib.optionals enabledLang.python.enable [ python ]
     ++ lib.optionals enabledLang.ruby.enable [ ruby ]
     ++ lib.optionals enabledLang.rust.enable [ rust ]
+    ++ lib.optionals enabledLang.terraform.enable [ terraform ]
     ++ lib.optionals enabledLang.haskell.enable [ haskell ]
     ++ lib.optionals enabledLang.latex.enable [
       latex
@@ -243,6 +245,10 @@ in
       texlivePackages.latexindent
       texlab
     ]
+    ++ lib.optionals enabledLang.terraform.enable [
+      terraform
+      terraform-ls
+    ]
     ++ lib.optionals enabledLang.haskell.enable [
       haskell-language-server
       fourmolu
@@ -341,6 +347,7 @@ in
             "@LANG_PYTHON_ENABLED@"
             "@LANG_RUST_ENABLED@"
             "@LANG_LATEX_ENABLED@"
+            "@LANG_TERRAFORM_ENABLED@"
             "@LANG_NIX_ENABLED@"
             "@LANG_RUBY_ENABLED@"
             "@LANG_LEAN_ENABLED@"
@@ -352,6 +359,7 @@ in
             (luaBool enabledLang.python.enable)
             (luaBool enabledLang.rust.enable)
             (luaBool enabledLang.latex.enable)
+            (luaBool enabledLang.terraform.enable)
             (luaBool enabledLang.nix.enable)
             (luaBool enabledLang.ruby.enable)
             (luaBool enabledLang.lean.enable)

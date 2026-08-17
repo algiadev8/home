@@ -22,6 +22,7 @@ in
     ./lang/haskell.nix
     ./lang/node.nix
     ./lang/latex.nix
+    ./lang/terraform.nix
     ./lang/lean.nix
     ./lang/nix.nix
     ./lang/rust.nix
