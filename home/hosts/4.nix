@@ -6,6 +6,9 @@
   ...
 }:
 {
+  # Temporary: expose the Homebrew CLI in the system PATH.
+  environment.systemPath = [ "/opt/homebrew/bin" ];
+
   homebrew = {
     enable = true;
     onActivation = {
@@ -14,6 +17,7 @@
     };
     brews = [
       "gmp"
+      "colima"
     ];
     casks = [
       "brave-browser"
@@ -38,8 +42,10 @@
   home-manager.users.${username} = { config, ... }: {
     imports = hmCommonModules;
     my.lang.node.enable = true;
+    my.lang.go.enable = true;
     my.lang.rust.enable = true;
     my.lang.nix.enable = true;
+    my.lang.terraform.enable = true;
     my.lang.latex.enable = true;
     my.lang.haskell.enable = true;
     my.lang.python.enable = true;
