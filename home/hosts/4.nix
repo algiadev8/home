@@ -63,6 +63,7 @@
       poppler-utils
       wrangler
       browser-use
+      act
     ];
     programs.gpg.enable = true;
     services.gpg-agent = {
