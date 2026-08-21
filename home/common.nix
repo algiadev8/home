@@ -8,7 +8,7 @@
 }:
 let
   direnvPackage =
-    if pkgs.stdenv.isDarwin then
+    if pkgs.stdenv.hostPlatform.isDarwin then
       pkgs.direnv.overrideAttrs (_: {
         doCheck = false;
       })

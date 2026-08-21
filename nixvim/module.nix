@@ -198,14 +198,14 @@ in
       stylua
     ]
     ++ lib.optionals (
-      pkgs.stdenv.isLinux
+      pkgs.stdenv.hostPlatform.isLinux
       && builtins.elem clipboardProvider [
         "auto"
         "wayland"
       ]
     ) [ wl-clipboard ]
     ++ lib.optionals (
-      pkgs.stdenv.isLinux
+      pkgs.stdenv.hostPlatform.isLinux
       && builtins.elem clipboardProvider [
         "auto"
         "xclip"

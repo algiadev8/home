@@ -1,6 +1,17 @@
 {
   description = "Home Manager configuration of dmtst";
 
+  nixConfig = {
+    extra-substituters = [
+      "https://herdr.cachix.org"
+      "https://statix.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "herdr.cachix.org-1:3nH7IStRsS0ASfdonA0DCRR2ZrSCeWitZ7Kwew0cR4I="
+      "statix.cachix.org-1:Z9E/g1YjCjU117QOOt07OjhljCoRZddiAm4VVESvais="
+    ];
+  };
+
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
@@ -61,10 +72,6 @@
       url = "path:./overlays/wrangler";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    text-embeddings-router-overlay = {
-      url = "path:./overlays/text-embeddings-router";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     browser-use-overlay = {
       url = "path:./browser-use";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -73,8 +80,12 @@
       url = "path:./overlays/officecli";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    herdr = {
-      url = "github:ogulcancelik/herdr";
+    herdr-nix = {
+      url = "github:herdrdev/herdr-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    statix = {
+      url = "github:molybdenumsoftware/statix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     my_secrets = {
@@ -101,7 +112,6 @@
       antigravity-overlay,
       playwright-overlay,
       wrangler-overlay,
-      text-embeddings-router-overlay,
       browser-use-overlay,
       officecli-overlay,
       brew-nix,
@@ -128,7 +138,6 @@
         antigravity-overlay.overlays.default
         playwright-overlay.overlays.default
         wrangler-overlay.overlays.default
-        text-embeddings-router-overlay.overlays.default
         browser-use-overlay.overlays.default
         officecli-overlay.overlays.default
         claude-overlay.overlays.default

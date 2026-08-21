@@ -18,6 +18,7 @@
     brews = [
       "gmp"
       "colima"
+      "text-embeddings-inference"
     ];
     casks = [
       "brave-browser"
@@ -36,6 +37,7 @@
       "microsoft-office"
       "ghostty"
       "docker-desktop"
+      "wolfram-engine"
     ];
   };
 
@@ -76,7 +78,7 @@
       enable = true;
       config = {
         ProgramArguments = [
-          "${pkgs.text-embeddings-router}/bin/text-embeddings-router"
+          "/opt/homebrew/bin/text-embeddings-router"
           "--model-id"
           "intfloat/multilingual-e5-small"
           "--port"

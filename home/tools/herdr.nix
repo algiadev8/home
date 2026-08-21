@@ -13,6 +13,6 @@ in
   options.my.tools.herdr.enable = lib.mkEnableOption "Herdr terminal workspace manager";
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ inputs.herdr.packages.${pkgs.stdenv.hostPlatform.system}.herdr ];
+    home.packages = [ inputs.herdr-nix.packages.${pkgs.stdenv.hostPlatform.system}.herdr ];
   };
 }

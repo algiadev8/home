@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 let
@@ -14,7 +15,7 @@ in
     home.packages = with pkgs; [
       nil
       nixfmt
-      statix
+      inputs.statix
       deadnix
     ];
   };
