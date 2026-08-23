@@ -8,14 +8,6 @@
 
 let
   cfg = config.my.tools.claude;
-  mkRepo = import ../lib/mk-worktree-repo.nix { inherit lib pkgs; };
-  pinFile = ../../pins/repos.json;
-  repo2 = mkRepo {
-    pinKey = "claude-my-subagents";
-    workdirName = "claude-my-subagents";
-    pinsFile = pinFile;
-    homeDir = config.home.homeDirectory;
-  };
 in
 {
   options.my.tools.claude = {
@@ -32,7 +24,7 @@ in
     lib.mkIf cfg.enable
       # Common configuration
       {
-        home.activation = repo2.activation // {
+        home.activation = {
           claudeSettings = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
             mkdir -p "$HOME/.claude"
 
@@ -43,7 +35,6 @@ in
           '';
         };
 
-        home.file.".claude/agents".source = config.lib.file.mkOutOfStoreSymlink repo2.workdir;
         home.file.".claude/hooks/format.sh".source = ../../dotfiles/.claude/hooks/format.sh;
 
         # Needed by notify-osc.sh timeout fallback.

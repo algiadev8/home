@@ -175,7 +175,6 @@
             home.homeDirectory = homeDirectory;
             home.packages = [
               self.packages.${system}.update-all
-              self.packages.${system}.update-pins
             ];
           }
         ];
@@ -358,7 +357,6 @@
         system:
         let
           pkgs = import nixpkgs { inherit system; };
-          updatePins = (import ./scripts/update-pin.nix { inherit pkgs self; }).updatePins;
           updateNpmOverlays =
             (import ./scripts/update-npm-overlays.nix {
               inherit pkgs;
@@ -369,14 +367,13 @@
             }).bootstrapNewDevice;
           updateAll =
             (import ./scripts/update-all.nix {
-              inherit hostIdentities pkgs updatePins;
+              inherit hostIdentities pkgs;
             }).updateAll;
         in
         {
           bootstrap-new-device = bootstrapNewDevice;
           update-all = updateAll;
           update-npm-overlays = updateNpmOverlays;
-          update-pins = updatePins;
         }
       );
       apps = forAllSystems (system: {
@@ -391,10 +388,6 @@
         update-npm-overlays = {
           type = "app";
           program = "${self.packages.${system}.update-npm-overlays}/bin/update-npm-overlays";
-        };
-        update-pins = {
-          type = "app";
-          program = "${self.packages.${system}.update-pins}/bin/update-pins";
         };
       });
     };

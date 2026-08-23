@@ -1,7 +1,0 @@
-{
-  "claude-my-subagents": {
-    "ref": "refs/heads/main",
-    "rev": "df6bb31261c42420babe8157886ff4df2e255fe5",
-    "url": "git@github.com:daichi-629/claude-my-subagents.git"
-  },
-}

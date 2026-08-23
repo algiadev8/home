@@ -1,4 +1,4 @@
-{ pkgs, updatePins, hostIdentities, ... }:
+{ pkgs, hostIdentities, ... }:
 let
   configCases = builtins.concatStringsSep "\n" (
     builtins.attrValues (
@@ -20,7 +20,6 @@ in
     repo_root="$(${pkgs.git}/bin/git rev-parse --show-toplevel)"
     cd "$repo_root"
 
-    ${updatePins}/bin/update-pins
     ${pkgs.nix}/bin/nix flake update
 
     if [ -n "$(${pkgs.git}/bin/git status --porcelain)" ]; then
