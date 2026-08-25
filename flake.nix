@@ -29,10 +29,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    claude-my-skills = {
-      url = "git+ssh://git@github.com/daichi-629/claude-my-skills";
-      flake = false;
-    };
     ppt-master = {
       url = "github:hugohe3/ppt-master";
       flake = false;

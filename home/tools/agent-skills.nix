@@ -50,7 +50,7 @@ in
       enable = true;
 
       sources.claude-my-skills = {
-        input = "claude-my-skills";
+        path = ../../claude-my-skills;
         subdir = ".";
         filter.maxDepth = 1;
       };

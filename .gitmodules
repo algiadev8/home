@@ -1,0 +1,3 @@
+[submodule "claude-my-skills"]
+	path = claude-my-skills
+	url = ssh://git@github.com/daichi-629/claude-my-skills
