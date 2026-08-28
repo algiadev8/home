@@ -97,6 +97,8 @@
     };
   };
 
+  inputs.self.submodules = true;
+
   outputs =
     inputs@{
       self,

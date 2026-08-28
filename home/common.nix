@@ -45,32 +45,37 @@ in
   home.stateVersion = "26.05";
   programs.home-manager.enable = true;
 
-  home.packages = with pkgs; [
-    git
-    ripgrep
-    fd
-    fzf
-    jq
-    bat
-    eza
-    zoxide
-    tmux
-    ghq
-    zellij
-    lazygit
-    gh
-    gh-dash
-    cmake
-    gcc
-    gnumake
-    wget
-    zip
-    unzip
-    sops
-    age
-    curl
-    htop
-  ];
+  home.packages =
+    with pkgs;
+    [
+      git
+      ripgrep
+      fd
+      fzf
+      jq
+      bat
+      eza
+      zoxide
+      tmux
+      ghq
+      zellij
+      lazygit
+      gh
+      gh-dash
+      cmake
+      gcc
+      gnumake
+      wget
+      zip
+      unzip
+      sops
+      age
+      curl
+      htop
+    ]
+    ++ (with pkgs_unstable; [
+      worktrunk
+    ]);
 
   home.sessionVariables = {
     EDITOR = "nvim";
