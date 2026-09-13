@@ -36,8 +36,7 @@ jobs:
             home-manager \
             nix-darwin \
             rust-overlay \
-            rustowl-flake \
-            nixvim \
+            nvim-config \
             claude-overlay \
             brew-nix \
             brew-api
