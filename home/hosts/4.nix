@@ -17,7 +17,6 @@
     };
     brews = [
       "gmp"
-      "colima"
       "text-embeddings-inference"
     ];
     casks = [
@@ -32,6 +31,7 @@
         name = "obsidian";
         greedy = true;
       }
+      "miro"
       "zotero"
       "lm-studio"
       "microsoft-office"
@@ -60,12 +60,20 @@
     my.tools.scrapling.enable = true;
     my.tools.playwright.enable = true;
     my.tools.officecli.enable = true;
+    my.tools.opentelemetry.enable = true;
     home.packages = with pkgs; [
       git-crypt
       poppler-utils
       wrangler
       browser-use
       act
+      (writeShellApplication {
+        name = "colab";
+        runtimeInputs = [ uv ];
+        text = ''
+          exec uvx --from google-colab-cli colab "$@"
+        '';
+      })
     ];
     programs.gpg.enable = true;
     services.gpg-agent = {
@@ -73,6 +81,7 @@
       enableZshIntegration = true;
       pinentry.package = pkgs.pinentry-curses;
     };
+    sops.age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
 
     launchd.agents.tei-embeddings = {
       enable = true;

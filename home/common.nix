@@ -40,6 +40,7 @@ in
     ./tools/scrapling.nix
     ./tools/copilot-cli.nix
     ./tools/officecli.nix
+    ./tools/opentelemetry-collector.nix
   ];
 
   home.stateVersion = "26.05";
