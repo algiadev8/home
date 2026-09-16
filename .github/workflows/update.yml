@@ -48,6 +48,8 @@ jobs:
 
       - name: Update overlays
         run: |
+          trap 'git restore flake.nix' EXIT
+          sed -i '/inputs\.self\.submodules = true;/d' flake.nix
           nix run .#update-npm-overlays
           nix run ./overlays/antigravity#update
           nix flake update --flake ./overlays/codex
