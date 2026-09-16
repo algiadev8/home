@@ -29,6 +29,11 @@ jobs:
 
       - name: Update flake.lock
         run: |
+          # The repository has a private submodule needed by local configurations.
+          # The Actions token cannot fetch that other private repository, and lock
+          # updates do not need its working tree, so exclude it only for this step.
+          trap 'git restore flake.nix' EXIT
+          sed -i '/inputs\.self\.submodules = true;/d' flake.nix
           nix flake update \
             nixpkgs \
             nixpkgs_unstable \
