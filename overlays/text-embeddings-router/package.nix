@@ -32,7 +32,7 @@ rustPlatform.buildRustPackage {
   };
 
   buildAndTestSubdir = "router";
-  buildFeatures = lib.optionals stdenv.isDarwin [ "metal" ];
+  buildFeatures = lib.optionals stdenv.hostPlatform.isDarwin [ "metal" ];
   doCheck = false;
 
   nativeBuildInputs = [
@@ -40,7 +40,7 @@ rustPlatform.buildRustPackage {
     pkg-config
   ];
 
-  buildInputs = lib.optionals stdenv.isDarwin [ apple-sdk_15 ];
+  buildInputs = lib.optionals stdenv.hostPlatform.isDarwin [ apple-sdk_15 ];
 
   env.PROTOC = "${protobuf}/bin/protoc";
 

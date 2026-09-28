@@ -34,10 +34,13 @@
     hledger-web
     bitwarden-cli
     imagemagick
-    zathura
-    zathuraPkgs.zathura_pdf_poppler
     git-crypt
   ];
+  programs.sioyek = {
+    enable = true;
+    bindings.synctex_under_cursor = "x";
+  };
+  targets.genericLinux.gpu.enable = true;
   programs.gpg.enable = true;
   services.gpg-agent = {
     enable = true;

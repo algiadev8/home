@@ -59,7 +59,6 @@ in
       zoxide
       tmux
       ghq
-      zellij
       lazygit
       gh
       gh-dash

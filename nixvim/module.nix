@@ -25,7 +25,7 @@ let
         enable = false;
       });
   enabledLang = langDefaults // lang;
-  vimtexViewMethod = if pkgs.stdenv.isDarwin then "skim" else "zathura";
+  vimtexViewMethod = if pkgs.stdenv.hostPlatform.isDarwin then "skim" else "sioyek";
   pythonDebugpy = pkgs.python3.withPackages (ps: [ ps.debugpy ]);
 
   fusen-nvim = pkgs.vimUtils.buildVimPlugin {
@@ -156,7 +156,7 @@ in
     vimtex_callback_progpath = "nvim";
     vimtex_subfile_start_local = 1;
   }
-  // lib.optionalAttrs (enabledLang.latex.enable && pkgs.stdenv.isDarwin) {
+  // lib.optionalAttrs (enabledLang.latex.enable && pkgs.stdenv.hostPlatform.isDarwin) {
     vimtex_view_skim_sync = 1;
     vimtex_view_skim_activate = 1;
   };

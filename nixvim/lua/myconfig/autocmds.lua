@@ -55,7 +55,9 @@ vim.api.nvim_create_autocmd({ "CursorHold", "FocusLost", "BufLeave" }, {
   callback = function()
     local file_exists = vim.fn.filereadable(vim.fn.expand("%")) == 1
     if vim.bo.modified and vim.bo.buftype == "" and vim.bo.modifiable and file_exists then
-      vim.cmd("update")
+      vim.b.autosaving = true
+      pcall(vim.cmd, "update")
+      vim.b.autosaving = false
     end
   end,
   desc = "変更があったバッファを自動的に保存する",

@@ -82,7 +82,13 @@ end
 require("conform").setup({
   formatters = formatters,
   formatters_by_ft = formatters_by_ft,
-  format_on_save = { lsp_format = "fallback", timeout_ms = 10000 },
+  format_on_save = function(bufnr)
+    -- 自動保存では整形しない
+    if vim.b[bufnr].autosaving then
+      return
+    end
+    return { lsp_format = "fallback", timeout_ms = 10000 }
+  end,
   default_format_opts = { lsp_format = "fallback" },
 })
 vim.keymap.set({ "n", "v" }, "<leader>mp", function()
