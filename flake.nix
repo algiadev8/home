@@ -68,8 +68,8 @@
       url = "path:./overlays/wrangler";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    browser-use-overlay = {
-      url = "path:./browser-use";
+    browser-harness-overlay = {
+      url = "path:./browser-harness";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     officecli-overlay = {
@@ -110,7 +110,7 @@
       antigravity-overlay,
       playwright-overlay,
       wrangler-overlay,
-      browser-use-overlay,
+      browser-harness-overlay,
       officecli-overlay,
       brew-nix,
       home-manager,
@@ -136,7 +136,7 @@
         antigravity-overlay.overlays.default
         playwright-overlay.overlays.default
         wrangler-overlay.overlays.default
-        browser-use-overlay.overlays.default
+        browser-harness-overlay.overlays.default
         officecli-overlay.overlays.default
         claude-overlay.overlays.default
         brew-nix.overlays.default
@@ -367,14 +367,23 @@
             (import ./scripts/update-all.nix {
               inherit hostIdentities pkgs;
             }).updateAll;
+          browser = import ./home/tools/browser/package.nix {
+            pkgs = import nixpkgs { inherit system overlays; };
+            pkgs_unstable = import nixpkgs_unstable { inherit system; };
+          };
         in
         {
           bootstrap-new-device = bootstrapNewDevice;
+          inherit browser;
           update-all = updateAll;
           update-npm-overlays = updateNpmOverlays;
         }
       );
       apps = forAllSystems (system: {
+        browser = {
+          type = "app";
+          program = "${self.packages.${system}.browser}/bin/browser";
+        };
         bootstrap-new-device = {
           type = "app";
           program = "${self.packages.${system}.bootstrap-new-device}/bin/bootstrap-new-device";

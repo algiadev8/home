@@ -18,6 +18,16 @@ let
 
     This does not apply to project documentation or other project-owned files.
 
+    ${lib.optionalString tools.browser.enable ''
+      ## Browser interaction
+
+      Use the `browser` CLI and the `browser` skill for browser interaction.
+      It controls Chromium in a Docker virtual screen over CDP. Use `browser view`
+      only when the user asks to see the screen. All agents share its browser and
+      profile; coordinate concurrent operations. Do not launch local Chrome or use
+      the old browser-use CLI or skill.
+    ''}
+
     ## 作業規範(全プロジェクト共通)
 
     - 事実・ライブラリのバージョン・API仕様は、断言する前にweb検索や実物(コード・公式ドキュメント)で検証する。検証していないことは「未検証」と明示する。

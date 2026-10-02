@@ -60,12 +60,12 @@
     my.tools.scrapling.enable = true;
     my.tools.playwright.enable = true;
     my.tools.officecli.enable = true;
+    my.tools.browser.enable = true;
     my.tools.opentelemetry.enable = true;
     home.packages = with pkgs; [
       git-crypt
       poppler-utils
       wrangler
-      browser-use
       act
       (writeShellApplication {
         name = "colab";

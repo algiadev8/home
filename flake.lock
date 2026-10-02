@@ -77,7 +77,7 @@
         "type": "github"
       }
     },
-    "browser-use-overlay": {
+    "browser-harness-overlay": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -87,11 +87,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "path": "./browser-use",
+        "path": "./browser-harness",
         "type": "path"
       },
       "original": {
-        "path": "./browser-use",
+        "path": "./browser-harness",
         "type": "path"
       },
       "parent": []
@@ -604,15 +604,15 @@
     "pyproject-build-systems": {
       "inputs": {
         "nixpkgs": [
-          "browser-use-overlay",
+          "browser-harness-overlay",
           "nixpkgs"
         ],
         "pyproject-nix": [
-          "browser-use-overlay",
+          "browser-harness-overlay",
           "pyproject-nix"
         ],
         "uv2nix": [
-          "browser-use-overlay",
+          "browser-harness-overlay",
           "uv2nix"
         ]
       },
@@ -633,7 +633,7 @@
     "pyproject-nix": {
       "inputs": {
         "nixpkgs": [
-          "browser-use-overlay",
+          "browser-harness-overlay",
           "nixpkgs"
         ]
       },
@@ -657,7 +657,7 @@
         "antigravity-overlay": "antigravity-overlay",
         "brew-api": "brew-api",
         "brew-nix": "brew-nix",
-        "browser-use-overlay": "browser-use-overlay",
+        "browser-harness-overlay": "browser-harness-overlay",
         "claude-overlay": "claude-overlay",
         "codex-overlay": "codex-overlay",
         "gemini-overlay": "gemini-overlay",
@@ -793,11 +793,11 @@
     "uv2nix": {
       "inputs": {
         "nixpkgs": [
-          "browser-use-overlay",
+          "browser-harness-overlay",
           "nixpkgs"
         ],
         "pyproject-nix": [
-          "browser-use-overlay",
+          "browser-harness-overlay",
           "pyproject-nix"
         ]
       },

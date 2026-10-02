@@ -1,5 +1,5 @@
 {
-  description = "browser-use Python application overlay.";
+  description = "browser-harness Python application overlay.";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
@@ -39,7 +39,8 @@
       ];
       forAllSystems = lib.genAttrs systems;
 
-      mkBrowserUse = system:
+      mkBrowserHarness =
+        system:
         let
           pkgs = import nixpkgs {
             inherit system;
@@ -56,22 +57,24 @@
             (pkgs.callPackage pyproject-nix.build.packages {
               inherit python;
             }).overrideScope
-              (lib.composeManyExtensions [
-                pyproject-build-systems.overlays.default
-                uvOverlay
-              ]);
+              (
+                lib.composeManyExtensions [
+                  pyproject-build-systems.overlays.default
+                  uvOverlay
+                ]
+              );
         in
-        pythonSet.mkVirtualEnv "browser-use-env" workspace.deps.default;
+        pythonSet.mkVirtualEnv "browser-harness-env" workspace.deps.default;
     in
     {
       packages = forAllSystems (
         system:
         let
-          browserUse = mkBrowserUse system;
+          browserHarness = mkBrowserHarness system;
         in
         {
-          browser-use = browserUse;
-          default = browserUse;
+          browser-harness = browserHarness;
+          default = browserHarness;
         }
       );
 
@@ -80,37 +83,37 @@
         let
           pkgs = import nixpkgs { inherit system; };
           update = pkgs.writeShellApplication {
-            name = "update-browser-use";
+            name = "update-browser-harness";
             runtimeInputs = [ pkgs.uv ];
             text = ''
               set -euo pipefail
 
-              workspace_root="''${BROWSER_USE_ROOT:-$PWD}"
-              if [ ! -f "$workspace_root/pyproject.toml" ] && [ -f "$workspace_root/browser-use/pyproject.toml" ]; then
-                workspace_root="$workspace_root/browser-use"
+              workspace_root="''${BROWSER_HARNESS_ROOT:-$PWD}"
+              if [ ! -f "$workspace_root/pyproject.toml" ] && [ -f "$workspace_root/browser-harness/pyproject.toml" ]; then
+                workspace_root="$workspace_root/browser-harness"
               fi
 
               if [ ! -f "$workspace_root/pyproject.toml" ]; then
-                echo "Could not find browser-use/pyproject.toml." >&2
-                echo "Run this command from the repository root or browser-use/." >&2
+                echo "Could not find browser-harness/pyproject.toml." >&2
+                echo "Run this command from the repository root or browser-harness/." >&2
                 exit 1
               fi
 
               cd "$workspace_root"
-              uv lock --upgrade-package browser-use
+              uv lock --upgrade-package browser-harness
             '';
           };
         in
         {
           update = {
             type = "app";
-            program = "${update}/bin/update-browser-use";
+            program = "${update}/bin/update-browser-harness";
           };
         }
       );
 
       overlays.default = final: _prev: {
-        browser-use = self.packages.${final.stdenv.hostPlatform.system}.browser-use;
+        browser-harness = self.packages.${final.stdenv.hostPlatform.system}.browser-harness;
       };
     };
 }

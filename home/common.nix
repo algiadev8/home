@@ -30,6 +30,7 @@ in
     ./lang/python.nix
     ./tools/claude.nix
     ./tools/agent-skills.nix
+    ./tools/browser.nix
     ./tools/codex.nix
     ./tools/gemini.nix
     ./tools/antigravity.nix
