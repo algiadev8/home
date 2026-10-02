@@ -52,10 +52,6 @@
       url = "path:./overlays/codex";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    gemini-overlay = {
-      url = "path:./overlays/gemini";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     antigravity-overlay = {
       url = "path:./overlays/antigravity";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -106,7 +102,6 @@
       rust-overlay,
       claude-overlay,
       codex-overlay,
-      gemini-overlay,
       antigravity-overlay,
       playwright-overlay,
       wrangler-overlay,
@@ -132,7 +127,6 @@
           };
         })
         codex-overlay.overlays.default
-        gemini-overlay.overlays.default
         antigravity-overlay.overlays.default
         playwright-overlay.overlays.default
         wrangler-overlay.overlays.default

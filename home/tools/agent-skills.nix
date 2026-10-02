@@ -5,7 +5,6 @@ let
   anyAgentToolEnabled =
     tools.claude.enable
     || tools.codex.enable
-    || tools.gemini.enable
     || tools.opencode.enable
     || tools.copilot.enable
     || tools.antigravity.enable;
@@ -91,10 +90,6 @@ in
           enable = tools.codex.enable;
           structure = "copy-tree";
         };
-        gemini = {
-          enable = tools.gemini.enable;
-          structure = "copy-tree";
-        };
         opencode = {
           enable = tools.opencode.enable;
           structure = "copy-tree";
@@ -103,14 +98,6 @@ in
           enable = tools.copilot.enable;
           structure = "copy-tree";
         };
-        # agent-skills-nix ships a default "antigravity" target pointed at
-        # $HOME/.gemini/antigravity/skills, but the installed antigravity-cli
-        # package (overlays/antigravity) actually keeps its state under
-        # $HOME/.gemini/antigravity-cli (settings.json, brain/, etc.) and has
-        # no "skills" directory of its own yet. It's unconfirmed whether
-        # antigravity-cli reads skills from a dedicated directory at all;
-        # this distributes to the plausible ~/.gemini/antigravity-cli/skills
-        # location so skills are ready if/when it does.
         antigravity = {
           enable = tools.antigravity.enable;
           dest = "$HOME/.gemini/antigravity-cli/skills";

@@ -208,23 +208,6 @@
         "type": "github"
       }
     },
-    "gemini-overlay": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "npm-cli": "npm-cli_2"
-      },
-      "locked": {
-        "path": "./overlays/gemini",
-        "type": "path"
-      },
-      "original": {
-        "path": "./overlays/gemini",
-        "type": "path"
-      },
-      "parent": []
-    },
     "git-hooks": {
       "flake": false,
       "locked": {
@@ -481,25 +464,6 @@
     "npm-cli_2": {
       "inputs": {
         "nixpkgs": [
-          "gemini-overlay",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "path": "../npm-cli",
-        "type": "path"
-      },
-      "original": {
-        "path": "../npm-cli",
-        "type": "path"
-      },
-      "parent": [
-        "gemini-overlay"
-      ]
-    },
-    "npm-cli_3": {
-      "inputs": {
-        "nixpkgs": [
           "playwright-overlay",
           "nixpkgs"
         ]
@@ -516,7 +480,7 @@
         "playwright-overlay"
       ]
     },
-    "npm-cli_4": {
+    "npm-cli_3": {
       "inputs": {
         "nixpkgs": [
           "wrangler-overlay",
@@ -573,7 +537,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "npm-cli": "npm-cli_3"
+        "npm-cli": "npm-cli_2"
       },
       "locked": {
         "path": "./overlays/playwright",
@@ -660,7 +624,6 @@
         "browser-harness-overlay": "browser-harness-overlay",
         "claude-overlay": "claude-overlay",
         "codex-overlay": "codex-overlay",
-        "gemini-overlay": "gemini-overlay",
         "herdr-nix": "herdr-nix",
         "home-manager": "home-manager",
         "my_secrets": "my_secrets",
@@ -820,7 +783,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "npm-cli": "npm-cli_4"
+        "npm-cli": "npm-cli_3"
       },
       "locked": {
         "path": "./overlays/wrangler",

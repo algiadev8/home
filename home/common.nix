@@ -32,7 +32,6 @@ in
     ./tools/agent-skills.nix
     ./tools/browser.nix
     ./tools/codex.nix
-    ./tools/gemini.nix
     ./tools/antigravity.nix
     ./tools/herdr.nix
     ./tools/neovim.nix
