@@ -31,6 +31,8 @@
           lang ? { },
           clipboardProvider ? "auto",
           harperPackage ? pkgs_unstable.harper,
+          opentofuPackage ? pkgs.opentofu,
+          tofuLsPackage ? pkgs.tofu-ls,
         }:
         nixvim.legacyPackages.${pkgs.stdenv.hostPlatform.system}.makeNixvimWithModule {
           pkgs = pkgs_unstable;
@@ -40,6 +42,8 @@
               clipboardProvider
               harperPackage
               lang
+              opentofuPackage
+              tofuLsPackage
               ;
           };
         };

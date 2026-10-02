@@ -1,8 +1,0 @@
-{
-  "name": "gemini-cli-wrapper",
-  "version": "1.0.0",
-  "private": true,
-  "dependencies": {
-    "@google/gemini-cli": "0.62.0"
-  }
-}

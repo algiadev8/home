@@ -65,8 +65,9 @@ if lang.latex then
   formatters_by_ft.tex = { "latexindent" }
 end
 if lang.terraform then
-  formatters_by_ft.terraform = { "terraform_fmt" }
-  formatters_by_ft["terraform-vars"] = { "terraform_fmt" }
+  formatters.tofu_fmt = { command = "tofu", args = { "fmt", "-" }, stdin = true }
+  formatters_by_ft.terraform = { "tofu_fmt" }
+  formatters_by_ft["terraform-vars"] = { "tofu_fmt" }
 end
 if lang.nix then
   formatters_by_ft.nix = { "nixfmt" }

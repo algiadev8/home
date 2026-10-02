@@ -32,6 +32,8 @@ in
           lang = config.my.lang;
           clipboardProvider = config.my.nvim.clipboard.provider;
           harperPackage = pkgs_unstable.harper;
+          opentofuPackage = pkgs.opentofu;
+          tofuLsPackage = pkgs.tofu-ls;
         })
       ];
     }

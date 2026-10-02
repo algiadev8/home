@@ -49,7 +49,6 @@
     my.lang.nix.enable = true;
     my.lang.terraform.enable = true;
     my.lang.latex.enable = true;
-    my.lang.haskell.enable = true;
     my.lang.python.enable = true;
     my.tools.claude.enable = true;
     my.tools.codex.enable = true;
@@ -62,6 +61,7 @@
     my.tools.officecli.enable = true;
     my.tools.browser.enable = true;
     my.tools.opentelemetry.enable = true;
+    my.tools.opencode.enable = true;
     home.packages = with pkgs; [
       git-crypt
       poppler-utils

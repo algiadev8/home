@@ -4,6 +4,8 @@
   lang ? { },
   clipboardProvider ? "auto",
   harperPackage ? pkgs.harper,
+  opentofuPackage ? pkgs.opentofu,
+  tofuLsPackage ? pkgs.tofu-ls,
   ...
 }:
 let
@@ -246,8 +248,8 @@ in
       texlab
     ]
     ++ lib.optionals enabledLang.terraform.enable [
-      terraform
-      terraform-ls
+      opentofuPackage
+      tofuLsPackage
     ]
     ++ lib.optionals enabledLang.haskell.enable [
       haskell-language-server

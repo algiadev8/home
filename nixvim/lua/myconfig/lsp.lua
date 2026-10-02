@@ -150,8 +150,8 @@ if lang.latex then
   end, { desc = "Toggle Nabla math preview" })
 end
 if lang.terraform then
-  vim.lsp.config("terraformls", {
-    cmd = { "terraform-ls", "serve" },
+  vim.lsp.config("tofu_ls", {
+    cmd = { "tofu-ls", "serve" },
     filetypes = { "terraform", "terraform-vars" },
     root_markers = { ".terraform", ".git" },
   })
@@ -311,7 +311,7 @@ if lang.latex then
   table.insert(lsp_servers, "texlab")
 end
 if lang.terraform then
-  table.insert(lsp_servers, "terraformls")
+  table.insert(lsp_servers, "tofu_ls")
 end
 for _, server in ipairs(lsp_servers) do
   pcall(vim.lsp.enable, server)

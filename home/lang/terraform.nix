@@ -8,12 +8,12 @@ let
   cfg = config.my.lang.terraform;
 in
 {
-  options.my.lang.terraform.enable = lib.mkEnableOption "Terraform language support";
+  options.my.lang.terraform.enable = lib.mkEnableOption "OpenTofu language support";
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
-      terraform
-      terraform-ls
+      opentofu
+      tofu-ls
     ];
   };
 }
