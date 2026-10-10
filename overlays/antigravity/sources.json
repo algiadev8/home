@@ -1,30 +1,30 @@
 {
   "aarch64-darwin": {
-    "hash": "sha512-At1AnY1Ava5Klxlsge4Am5C75Gc644DwzSsrTv8FVW0GaOkYLW1h8c68igsMNZThHVFAcRdfQdcQEegrsxyfIg==",
+    "hash": "sha512-Beu0chScpGHpn3hwzoH73UjjhE9DuWp3jJgdmDQhYnxb0CWW3IIRzNMLTO4N+MpNF7aB9YfvIpSOpMcD6cf8vQ==",
     "manifestPlatform": "darwin_arm64",
-    "sha512": "02dd409d8d40bdae4a97196c81ee009b90bbe4673ae380f0cd2b2b4eff05556d0668e9182d6d61f1cebc8a0b0c3594e11d514071175f41d71011e82bb31c9f22",
-    "url": "https://storage.googleapis.com/antigravity-public/antigravity-cli/1.3.2-5813501495738368/darwin-arm/cli_mac_arm64.tar.gz",
-    "version": "1.3.2"
+    "sha512": "05ebb472149ca461e99f7870ce81fbdd48e3844f43b96a778c981d983421627c5bd02596dc8211ccd30b4cee0df8ca4d17b681f587ef22948ea4c703e9c7fcbd",
+    "url": "https://storage.googleapis.com/antigravity-public/antigravity-cli/1.3.3-5524738307653632/darwin-arm/cli_mac_arm64.tar.gz",
+    "version": "1.3.3"
   },
   "aarch64-linux": {
-    "hash": "sha512-RMMxAfBe/JJaEsqHpcHJDFlNoF36EetLdH8i59R49OmmtZa5IHYmbEYVPq3IfUiOnb/DyumfT1DVII5riBSh1A==",
+    "hash": "sha512-G/01A1diGaECF2wTV5ZlovOehKyGqQSxF9OzPz3XUfGUqGJJa61v/pFK1G0sh3uhK2wH5tsHEotwbSOCYv5DDA==",
     "manifestPlatform": "linux_arm64",
-    "sha512": "44c33101f05efc925a12ca87a5c1c90c594da05dfa11eb4b747f22e7d478f4e9a6b596b92076266c46153eadc87d488e9dbfc3cae99f4f50d5208e6b8814a1d4",
-    "url": "https://storage.googleapis.com/antigravity-public/antigravity-cli/1.3.2-5813501495738368/linux-arm/cli_linux_arm64.tar.gz",
-    "version": "1.3.2"
+    "sha512": "1bfd3503576219a102176c13579665a2f39e84ac86a904b117d3b33f3dd751f194a862496bad6ffe914ad46d2c877ba12b6c07e6db07128b706d238262fe430c",
+    "url": "https://storage.googleapis.com/antigravity-public/antigravity-cli/1.3.3-5524738307653632/linux-arm/cli_linux_arm64.tar.gz",
+    "version": "1.3.3"
   },
   "x86_64-darwin": {
-    "hash": "sha512-/XomRmu6FdT4WOns1FW9TR2i7kmjFXK3UsKegCMyoIep7ZA2XKF7NFXdV4ZxJAWhSKxCx6VXtBwETJJVlAmxbg==",
+    "hash": "sha512-lwdax+0ICSj1jsPgvoOzgFf5gNQJJ6PQ2txUhQypmohPOMkL9cT27LPGEB8x11YFAEUDkMRoIIrH3iVgry33aw==",
     "manifestPlatform": "darwin_amd64",
-    "sha512": "fd7a26466bba15d4f858e9ecd455bd4d1da2ee49a31572b752c29e802332a087a9ed90365ca17b3455dd5786712405a148ac42c7a557b41c044c92559409b16e",
-    "url": "https://storage.googleapis.com/antigravity-public/antigravity-cli/1.3.2-5813501495738368/darwin-x64/cli_mac_x64.tar.gz",
-    "version": "1.3.2"
+    "sha512": "97075ac7ed080928f58ec3e0be83b38057f980d40927a3d0dadc54850ca99a884f38c90bf5c4f6ecb3c6101f31d7560500450390c468208ac7de2560af2df76b",
+    "url": "https://storage.googleapis.com/antigravity-public/antigravity-cli/1.3.3-5524738307653632/darwin-x64/cli_mac_x64.tar.gz",
+    "version": "1.3.3"
   },
   "x86_64-linux": {
-    "hash": "sha512-jcK7hHHPpjJuKeKJat12etLR83FDBLcPuucg1orwERguev3kOWSno/VMYEq3LE+tdyyFlWCLBZz8WC+2eYol0g==",
+    "hash": "sha512-q+Pd9c8w062qWGrPUFIhqhlwL1ynGvPIsfmxpZdr2OXBUcQeozs5xBZ10lhDRio+jDgsBU9YDp1+FoiRnTtREA==",
     "manifestPlatform": "linux_amd64",
-    "sha512": "8dc2bb8471cfa6326e29e2896add767ad2d1f3714304b70fbae720d68af011182e7afde43964a7a3f54c604ab72c4fad772c8595608b059cfc582fb6798a25d2",
-    "url": "https://storage.googleapis.com/antigravity-public/antigravity-cli/1.3.2-5813501495738368/linux-x64/cli_linux_x64.tar.gz",
-    "version": "1.3.2"
+    "sha512": "abe3ddf5cf30d3adaa586acf505221aa19702f5ca71af3c8b1f9b1a5976bd8e5c151c41ea33b39c41675d25843462a3e8c382c054f580e9d7e1688919d3b5110",
+    "url": "https://storage.googleapis.com/antigravity-public/antigravity-cli/1.3.3-5524738307653632/linux-x64/cli_linux_x64.tar.gz",
+    "version": "1.3.3"
   }
 }
