@@ -1,5 +1,4 @@
 {
-  pkgs,
   config,
   lib,
   ...
@@ -12,7 +11,7 @@ in
   options.my.tools.codex.enable = lib.mkEnableOption "Codex toolchain";
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ pkgs.codex ];
+    my.tools.aqua.packages = [ "openai/codex" ];
     programs.zsh.initContent = ''
       eval "$(codex completion zsh)"
     '';

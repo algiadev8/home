@@ -62,11 +62,11 @@
     my.tools.browser.enable = true;
     my.tools.opentelemetry.enable = true;
     my.tools.opencode.enable = true;
+    my.tools.aqua.packages = [ "nektos/act" ];
     home.packages = with pkgs; [
       git-crypt
       poppler-utils
       wrangler
-      act
       (writeShellApplication {
         name = "colab";
         runtimeInputs = [ uv ];
@@ -101,7 +101,7 @@
     };
 
     programs.ghostty = {
-      enable = false;
+      enable = true;
 
       package = pkgs.brewCasks.ghostty;
 

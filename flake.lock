@@ -23,22 +23,6 @@
         "type": "github"
       }
     },
-    "antigravity-overlay": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "path": "./overlays/antigravity",
-        "type": "path"
-      },
-      "original": {
-        "path": "./overlays/antigravity",
-        "type": "path"
-      },
-      "parent": []
-    },
     "brew-api": {
       "flake": false,
       "locked": {
@@ -92,41 +76,6 @@
       },
       "original": {
         "path": "./browser-harness",
-        "type": "path"
-      },
-      "parent": []
-    },
-    "claude-overlay": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_2"
-      },
-      "locked": {
-        "lastModified": 1793127731,
-        "narHash": "sha256-imqVnIzOu2cp4DXhpC0tVP6h8HZAeNkqEfUDKraIceo=",
-        "owner": "ryoppippi",
-        "repo": "nix-claude-code",
-        "rev": "2a9c9406421f50f18d3a2daf4735e757de9fa34a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ryoppippi",
-        "repo": "nix-claude-code",
-        "type": "github"
-      }
-    },
-    "codex-overlay": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "npm-cli": "npm-cli"
-      },
-      "locked": {
-        "path": "./overlays/codex",
-        "type": "path"
-      },
-      "original": {
-        "path": "./overlays/codex",
         "type": "path"
       },
       "parent": []
@@ -300,11 +249,11 @@
     },
     "my_secrets": {
       "locked": {
-        "lastModified": 1789315426,
-        "narHash": "sha256-Ddn3YQe4AH8xXsRenG/fchcM4pWbtyokMjAFe3lCDi8=",
+        "lastModified": 1793186951,
+        "narHash": "sha256-whDBNbdcyTBwpXbM1PkoOGOEk8VSXaaw5NVr2SheQNE=",
         "ref": "refs/heads/main",
-        "rev": "afd05f77012e0a01bd820658e59e159c196e2429",
-        "revCount": 10,
+        "rev": "3e821723c8e39102649255db95161e02c4d1c7d8",
+        "revCount": 15,
         "type": "git",
         "url": "ssh://git@github.com/daichi-629/home-secrets"
       },
@@ -373,22 +322,6 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1792773339,
-        "narHash": "sha256-rZLrzrC6i+jnTAlvPZHogKDulY7WWDEv9hJeHieO7Zw=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "3ec636362e1816bc2f0888fa0fa2c69f1bc9e504",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
         "lastModified": 1793015021,
         "narHash": "sha256-Ee5BWo8sh3pGt70QUdRajnaginqFmWvrtdBc4gJzhks=",
         "owner": "nixos",
@@ -405,11 +338,11 @@
     },
     "nixpkgs_unstable": {
       "locked": {
-        "lastModified": 1792988994,
-        "narHash": "sha256-E+HigzJzvGXROZzlzN0k7mhV7A7H0bYnIHzXLYCsHG8=",
+        "lastModified": 1793136825,
+        "narHash": "sha256-2pkE69JpFRInaARSczZytcfPw83IL82E2KdhbWGwdMs=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "f4b794aaffc0e3d45da81088d492b118224bb476",
+        "rev": "f05535a0efcb2134c478d1e88434fadf486d42b5",
         "type": "github"
       },
       "original": {
@@ -445,25 +378,6 @@
     "npm-cli": {
       "inputs": {
         "nixpkgs": [
-          "codex-overlay",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "path": "../npm-cli",
-        "type": "path"
-      },
-      "original": {
-        "path": "../npm-cli",
-        "type": "path"
-      },
-      "parent": [
-        "codex-overlay"
-      ]
-    },
-    "npm-cli_2": {
-      "inputs": {
-        "nixpkgs": [
           "playwright-overlay",
           "nixpkgs"
         ]
@@ -480,7 +394,7 @@
         "playwright-overlay"
       ]
     },
-    "npm-cli_3": {
+    "npm-cli_2": {
       "inputs": {
         "nixpkgs": [
           "wrangler-overlay",
@@ -537,7 +451,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "npm-cli": "npm-cli_2"
+        "npm-cli": "npm-cli"
       },
       "locked": {
         "path": "./overlays/playwright",
@@ -618,17 +532,14 @@
     "root": {
       "inputs": {
         "agent-skills": "agent-skills",
-        "antigravity-overlay": "antigravity-overlay",
         "brew-api": "brew-api",
         "brew-nix": "brew-nix",
         "browser-harness-overlay": "browser-harness-overlay",
-        "claude-overlay": "claude-overlay",
-        "codex-overlay": "codex-overlay",
         "herdr-nix": "herdr-nix",
         "home-manager": "home-manager",
         "my_secrets": "my_secrets",
         "nix-darwin": "nix-darwin_2",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_2",
         "nixpkgs_unstable": "nixpkgs_unstable",
         "nvim-config": "nvim-config",
         "officecli-overlay": "officecli-overlay",
@@ -783,7 +694,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "npm-cli": "npm-cli_3"
+        "npm-cli": "npm-cli_2"
       },
       "locked": {
         "path": "./overlays/wrangler",

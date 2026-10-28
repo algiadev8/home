@@ -45,17 +45,6 @@
       url = "path:./nixvim";
       inputs.nixpkgs.follows = "nixpkgs_unstable";
     };
-    claude-overlay = {
-      url = "github:ryoppippi/nix-claude-code";
-    };
-    codex-overlay = {
-      url = "path:./overlays/codex";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    antigravity-overlay = {
-      url = "path:./overlays/antigravity";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     playwright-overlay = {
       url = "path:./overlays/playwright";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -100,9 +89,6 @@
       self,
       nixpkgs,
       rust-overlay,
-      claude-overlay,
-      codex-overlay,
-      antigravity-overlay,
       playwright-overlay,
       wrangler-overlay,
       browser-harness-overlay,
@@ -126,13 +112,10 @@
             override = args: prev.himalaya.override (builtins.removeAttrs args [ "withFeatures" ]);
           };
         })
-        codex-overlay.overlays.default
-        antigravity-overlay.overlays.default
         playwright-overlay.overlays.default
         wrangler-overlay.overlays.default
         browser-harness-overlay.overlays.default
         officecli-overlay.overlays.default
-        claude-overlay.overlays.default
         brew-nix.overlays.default
       ];
       hostIdentities = my_secrets.lib.my.hosts;

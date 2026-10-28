@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  pkgs_unstable,
   lib,
   sops-nix,
   ...
@@ -28,6 +27,7 @@ in
     ./lang/rust.nix
     ./lang/ruby.nix
     ./lang/python.nix
+    ./tools/aqua.nix
     ./tools/claude.nix
     ./tools/agent-skills.nix
     ./tools/browser.nix
@@ -46,36 +46,35 @@ in
   home.stateVersion = "26.05";
   programs.home-manager.enable = true;
 
-  home.packages =
-    with pkgs;
-    [
-      git
-      ripgrep
-      fd
-      fzf
-      jq
-      bat
-      eza
-      zoxide
-      tmux
-      ghq
-      lazygit
-      gh
-      gh-dash
-      cmake
-      gcc
-      gnumake
-      wget
-      zip
-      unzip
-      sops
-      age
-      curl
-      htop
-    ]
-    ++ (with pkgs_unstable; [
-      worktrunk
-    ]);
+  home.packages = with pkgs; [
+    git
+    ripgrep
+    fd
+    fzf
+    jq
+    bat
+    eza
+    zoxide
+    tmux
+    cmake
+    gcc
+    gnumake
+    wget
+    zip
+    unzip
+    sops
+    age
+    curl
+    htop
+  ];
+
+  my.tools.aqua.packages = [
+    "x-motemen/ghq"
+    "jesseduffield/lazygit"
+    "cli/cli"
+    "dlvhdr/gh-dash"
+    "max-sixty/worktrunk"
+  ];
 
   home.sessionVariables = {
     EDITOR = "nvim";

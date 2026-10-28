@@ -1,5 +1,4 @@
 {
-  pkgs,
   config,
   lib,
   ...
@@ -12,6 +11,6 @@ in
   options.my.tools.antigravity.enable = lib.mkEnableOption "Antigravity CLI toolchain";
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ pkgs.antigravity-cli ];
+    my.tools.aqua.packages = [ "google-antigravity/antigravity-cli" ];
   };
 }
