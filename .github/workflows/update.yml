@@ -42,7 +42,6 @@ jobs:
             nix-darwin \
             rust-overlay \
             nvim-config \
-            claude-overlay \
             brew-nix \
             brew-api
 
@@ -51,16 +50,10 @@ jobs:
           trap 'git restore flake.nix' EXIT
           sed -i '/inputs\.self\.submodules = true;/d' flake.nix
           nix run .#update-npm-overlays
-          nix run ./overlays/antigravity#update
-          nix flake update --flake ./overlays/codex
-          nix flake update --flake ./overlays/antigravity
           nix flake update --flake ./overlays/playwright
           nix run ./browser-harness#update
           nix flake update --flake ./browser-harness
           nix flake update \
-            codex-overlay \
-            gemini-overlay \
-            antigravity-overlay \
             playwright-overlay \
             browser-harness-overlay
 
