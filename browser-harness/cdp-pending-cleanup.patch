@@ -1,0 +1,25 @@
+--- a/lib/python3.12/site-packages/cdp_use/client.py
++++ b/lib/python3.12/site-packages/cdp_use/client.py
+@@ -380,13 +380,18 @@
+             msg["sessionId"] = session_id
+ 
+         # Create a future for this request
++        request_id = self.msg_id
+         future = asyncio.Future()
+-        self.pending_requests[self.msg_id] = future
++        self.pending_requests[request_id] = future
+ 
+-        await self.ws.send(json.dumps(msg))
+-
+-        # Wait for the response
+-        return await future
++        try:
++            await self.ws.send(json.dumps(msg))
++            # Wait for the response
++            return await future
++        finally:
++            # Cancellation or a send failure must not retain an orphaned future.
++            if self.pending_requests.get(request_id) is future:
++                self.pending_requests.pop(request_id, None)
+ 
+     async def emit_event(

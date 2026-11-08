@@ -33,6 +33,8 @@ pkgs.writeShellApplication {
     export BROWSER_DOCKER_SOURCE="${dockerSource}"
     export BROWSER_DOCKER_IMAGE="agent-browser:${imageVersion}"
     export BROWSER_SKILL_PATH="${../../../skills/browser/SKILL.md}"
-    exec ${pkgs.python312}/bin/python ${./cli.py} "$@"
+    export BROWSER_CLI_PATH="${./cli.py}"
+    export BROWSER_PYTHON="${pkgs.python312}/bin/python"
+    exec "$BROWSER_PYTHON" "$BROWSER_CLI_PATH" "$@"
   '';
 }

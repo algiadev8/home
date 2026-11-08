@@ -61,6 +61,19 @@
                 lib.composeManyExtensions [
                   pyproject-build-systems.overlays.default
                   uvOverlay
+                  (final: prev: {
+                    browser-harness = prev.browser-harness.overrideAttrs (old: {
+                      postInstall = (old.postInstall or "") + ''
+                        patch -d "$out" -p1 < ${./foreground-capture.patch}
+                        cp ${./foreground-capture.py} "$out/lib/python3.12/site-packages/browser_harness/foreground_capture.py"
+                      '';
+                    });
+                    cdp-use = prev.cdp-use.overrideAttrs (old: {
+                      postInstall = (old.postInstall or "") + ''
+                        patch -d "$out" -p1 < ${./cdp-pending-cleanup.patch}
+                      '';
+                    });
+                  })
                 ]
               );
         in
