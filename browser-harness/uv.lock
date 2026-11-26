@@ -17,7 +17,7 @@ wheels = [
 
 [[package]]
 name = "browser-harness"
-version = "0.1.14"
+version = "0.1.15"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "cdp-use" },
@@ -25,9 +25,9 @@ dependencies = [
     { name = "pillow" },
     { name = "websockets" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/47/cc/bcd2940c8b53eec46d3ff774c56439f3ccd6aef0ccd9d48638e55c55dc3d/browser_harness-0.1.14.tar.gz", hash = "sha256:c3f0f3bda480ae3591f5839d0dc4913df4a64dd93fbda7af35fab69e09bd1c2d", size = 149992, upload-time = "2026-11-24T08:17:51.966Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/b8/cb/507a8523a9d86d2bbe759962354916cffaa779b7e5337b27f3d93da475b4/browser_harness-0.1.15.tar.gz", hash = "sha256:790d29db12fd84c3eb7d76531385806987fee6bace74a18c3e21ae6f5cdc9a99", size = 150008, upload-time = "2026-11-25T11:56:51.947Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/48/e8/c032268f730593864dd26195c3be52cb02fc74cc4d7ef520d6a733aee00a/browser_harness-0.1.14-py3-none-any.whl", hash = "sha256:c8b7db245d477a6a6f4c067e91e7b013b98de0fad499c493607e1869a0783a6c", size = 154909, upload-time = "2026-11-24T08:17:50.792Z" },
+    { url = "https://files.pythonhosted.org/packages/a6/f4/c9a43db589c78f667e3d858289f8bc2397cf420736c26963c318d12e1de4/browser_harness-0.1.15-py3-none-any.whl", hash = "sha256:a0d7e2913101278abe6cd7b416d6c84b3d9dd8d65dbb37cc9e7cd23af38d9b5e", size = 154972, upload-time = "2026-11-25T11:56:50.824Z" },
 ]
 
 [[package]]
